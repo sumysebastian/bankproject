@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+     <style>
+    form{
+    background-color:pink;
+    text-align:center;
+    }
+  </style>
+</head>
+<body>
+<form action="newpage" method="post">
+  {% csrf_token %}
+
+    <button type="submit">Welcome to form</button>
+
+</form>
+</body>
+</html>

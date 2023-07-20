@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    form{
+    background-color:pink;
+    text-align:center;
+    }
+  </style>
+</head>
+<body>
+<h2> Registration </h2>
+<form action="form" method="post">
+    {% csrf_token %}
+
+ <input type="text" name="username1" placeholder="Enter your name"><br>
+  <input type="date" name="dob" placeholder="Enter your date of birth"><br>
+   <input type="text" name="age" placeholder="Enter your age"><br>
+    <label>submit your gender: </label>
+    <label> male</label>
+    <input type="radio">
+    <label>female</label>
+    <input type="radio"><br>
+    <input type="pno" name="pno" placeholder="Enter your phonenumber"><br>
+    <input type="email" name="email" placeholder="Enter your email"><br>
+    <input type="text" name="address" placeholder="Enter your address"><br>
+    <label>District</label>
+    <option value="....">{{ dist.name }}</option>
+    <label>Branches</label>
+       {% for branches in branches %}
+    <option value="{{ dist.name }}">{{ branches.name }}</option>
+         {% endfor %}
+
+   <br> <label> Enter your materials provide:</label><br>
+    <label>Debit Card</label>
+    <input type="checkbox">
+    <label>Credit Card</label>
+    <input type="checkbox">
+    <label>Check book</label>
+    <input type="checkbox"><br>
+    <input type="submit">
+    <a href="{% url 'bankapp:home' %}">Home</a>
+</form>
+
+{% for msg in messages %}
+<h1> {{msg}} </h1>
+{% endfor %}
+</body>
+</html>
